@@ -19,6 +19,10 @@ public class Main {
 
         System.out.println(users.read());
         System.out.println(users.getLength());
+        System.out.println(users.getLength2("bytes"));
+        System.out.println( users.getLength2("kb"));
+        System.out.println(users.getLength2("mb"));
+        System.out.println( users.getLength2("gb"));
         users.rename("src/users_new.txt");
 
 

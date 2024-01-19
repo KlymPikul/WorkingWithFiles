@@ -65,6 +65,34 @@ public class FileHandler {
         }
     }
 
+
+
+    public String getLength2(String unit) {
+        File file = new File(this.path);
+        long length = file.length();
+
+    double fileSize;
+
+    switch (unit.toLowerCase()) {
+        case "bytes":
+            fileSize = (double) length;
+            break;
+        case "kb":
+            fileSize = (double) length / 1024;
+            break;
+        case "mb":
+            fileSize = (double) length / (1024 * 1024);
+            break;
+        case "gb":
+            fileSize = (double) length / (1024 * 1024 * 1024);
+            break;
+        default:
+            return "Invalid unit";
+    }
+
+    return String.format("%.2f %s", fileSize, unit);
+}
+
     //Переименование файла по новому пути.
     public void rename(String newPath) {
         File file = new File(this.path);
